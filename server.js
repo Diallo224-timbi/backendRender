@@ -16,7 +16,7 @@ const options = {
   //useFindAndUpdate:false
 };
 
-mongoose.connect(uri, options)
+mongoose.connect(uri)
   .then(() => {
     console.log("Connecté à la base MongoDB assignments dans le cloud !");
     console.log("at URI = " + uri);
