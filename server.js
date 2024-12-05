@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
 
@@ -42,6 +43,10 @@ let port = process.env.PORT || 8010;
 
 // les routes
 const prefix = '/api';
+
+app.get('/', (req, res) => {
+  res.send('Bienvenue sur l\'API Assignments');
+});
 
 app.route(prefix + '/assignments')
   .get(assignment.getAssignments);
